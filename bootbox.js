@@ -355,8 +355,8 @@ var bootbox = window.bootbox || (function(document, $) {
         // @see https://github.com/twitter/bootstrap/issues/4854
         // for an explanation of tabIndex=-1
 
-        var parts = ["<div class='bootbox modal' tabindex='-1' style='overflow:hidden;'>"];
-
+        var parts = ["<div class='bootbox modal' tabindex='-1' style='overflow:hidden;'><div class='modal-dialog'><div class='modal-content'>"];
+        
         if (options['header']) {
             var closeButton = '';
             if (typeof options['headerCloseButton'] == 'undefined' || options['headerCloseButton']) {
@@ -373,7 +373,7 @@ var bootbox = window.bootbox || (function(document, $) {
             parts.push("<div class='modal-footer'>"+buttons+"</div>");
         }
 
-        parts.push("</div>");
+        parts.push("</div></div></div>");
 
         var div = $(parts.join("\n"));
 
